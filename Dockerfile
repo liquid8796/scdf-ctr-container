@@ -32,6 +32,7 @@ SHELL ["/bin/bash", "-o", "errexit", "-o", "nounset", "-o", "pipefail", "-c"]
 RUN dos2unix /usr/sbin/install_packages
 RUN install_packages ca-certificates curl procps zlib1g
 RUN mkdir -p /tmp/bitnami/pkg/cache
+COPY /build /opt/bitnami
 RUN cd /tmp/bitnami/pkg/cache/ ; \
     COMPONENTS=( \
       "java-21.0.5-11-1-linux-${OS_ARCH}-debian-12" \
