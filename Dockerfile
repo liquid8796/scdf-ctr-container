@@ -36,7 +36,6 @@ COPY /build /opt/bitnami
 RUN cd /tmp/bitnami/pkg/cache/ ; \
     COMPONENTS=( \
       "java-21.0.5-11-1-linux-${OS_ARCH}-debian-12" \
-      "spring-cloud-dataflow-composed-task-runner-2.11.5-1-linux-${OS_ARCH}-debian-12" \
     ) ; \
     for COMPONENT in "${COMPONENTS[@]}"; do \
       if [ ! -f "${COMPONENT}.tar.gz" ]; then \
