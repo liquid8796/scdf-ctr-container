@@ -36,7 +36,6 @@ COPY /build /opt/bitnami
 RUN cd /tmp/bitnami/pkg/cache/ ; \
     COMPONENTS=( \
       "java-21.0.5-11-1-linux-${OS_ARCH}-debian-12" \
-      "spring-cloud-dataflow-composed-task-runner-2.11.5-1-linux-${OS_ARCH}-debian-12" \
     ) ; \
     for COMPONENT in "${COMPONENTS[@]}"; do \
       if [ ! -f "${COMPONENT}.tar.gz" ]; then \
@@ -55,6 +54,7 @@ RUN find / -perm /6000 -type f -exec chmod a-s {} \; || true
 RUN mkdir /.m2 && chmod -R g+rwX /.m2
 
 COPY rootfs /
+RUN find /opt/bitnami/scripts -type f -exec dos2unix {} \;
 RUN /opt/bitnami/scripts/java/postunpack.sh
 ENV APP_VERSION="2.11.5" \
     BITNAMI_APP_NAME="spring-cloud-dataflow-composed-task-runner" \
