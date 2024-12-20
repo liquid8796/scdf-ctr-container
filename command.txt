@@ -1,3 +1,5 @@
 docker build --no-cache -t liquid8796/spring-cloud-dataflow-composed-task-runner-beta-3 .;  docker push liquid8796/spring-cloud-dataflow-composed-task-runner-beta-3
 
 docker save liquid8796/spring-cloud-dataflow-composed-task-runner:2.11.5 -o spring-cloud-dataflow-composed-task-runner-2.11.5.tar
+
+docker save java/spring-batch/spring-cloud-dataflow-composed-task-runner-image-server:1.0.0-develop -o spring-cloud-dataflow-composed-task-runner-2.11.5.tar
